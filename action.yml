@@ -2,6 +2,10 @@ name: Npm build to gh-pages
 
 description: installs, builds and publishes dist folder to gh-pages
 
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
 runs:
   using: "composite"
   steps:
