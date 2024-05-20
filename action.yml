@@ -6,6 +6,10 @@ branding:
   icon: 'upload-cloud'
   color: 'blue'
 
+on:
+  workflow_call:
+    secrets: inherit
+
 runs:
   using: "composite"
   steps:
@@ -24,7 +28,9 @@ runs:
         restore-keys: |
           ${{ runner.os }}-node-
     - run: npm install
+      shell: bash
     - run: npm run build
+      shell: bash
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
