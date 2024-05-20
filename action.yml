@@ -1,5 +1,7 @@
 name: Npm build to gh-pages
 
+description: installs, builds and publishes dist folder to gh-pages
+
 on:
   push:
     branches:
