@@ -6,15 +6,10 @@ branding:
   icon: 'upload-cloud'
   color: 'blue'
 
-on:
-  workflow_call:
-    secrets: inherit
-
 inputs:
   github_token:
     description: 'Set a generated GITHUB_TOKEN for pushing to the remote branch.'
     required: false
-
 
 runs:
   using: "composite"
@@ -47,3 +42,4 @@ runs:
       with:
         github_token: ${{ inputs.github_token }}
         publish_dir: ./dist
+        
