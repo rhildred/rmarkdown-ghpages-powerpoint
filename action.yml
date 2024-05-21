@@ -6,15 +6,10 @@ branding:
   icon: 'upload-cloud'
   color: 'blue'
 
-on:
-  workflow_call:
-    secrets: inherit
-
 inputs:
   github_token:
     description: 'Set a generated GITHUB_TOKEN for pushing to the remote branch.'
     required: false
-
 
 runs:
   using: "composite"
@@ -34,8 +29,10 @@ runs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
+
     - run: npm install
       shell: bash
+
     - run: npm run build
       shell: bash
 
