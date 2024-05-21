@@ -6,10 +6,15 @@ branding:
   icon: 'upload-cloud'
   color: 'blue'
 
+on:
+  workflow_call:
+    secrets: inherit
+
 inputs:
   github_token:
     description: 'Set a generated GITHUB_TOKEN for pushing to the remote branch.'
     required: false
+
 
 runs:
   using: "composite"
@@ -38,6 +43,7 @@ runs:
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ inputs.github_token }}
         publish_dir: ./dist
