@@ -18,7 +18,7 @@ runs:
     - uses: actions/checkout@v3
 
     - name: install R
-      run: apt install -y r-base r-base-dev pandoc texlive
+      run: sudo apt install -y r-base r-base-dev pandoc texlive
       shell: bash
 
     - name: install RMarkdown
