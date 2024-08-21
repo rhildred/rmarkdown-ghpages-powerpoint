@@ -22,7 +22,7 @@ runs:
       shell: bash
 
     - name: install RMarkdown
-      run: R -e 'install.packages("rmarkdown")'
+      run: sudo R -e 'install.packages("rmarkdown")'
       shell: bash
 
     - name: install RMarkdown
