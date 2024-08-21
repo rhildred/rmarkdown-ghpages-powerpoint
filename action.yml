@@ -1,4 +1,4 @@
-name: Npm build to gh-pages
+name: RMarkdown to gh-pages powerpoint
 
 description: installs, builds and publishes dist folder to gh-pages
 
