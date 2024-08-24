@@ -26,7 +26,7 @@ runs:
       shell: bash
 
     - name: install RMarkdown
-      run: R -e 'rmarkdown::render("slides.Rmd", output_format = "powerpoint_presentation", output_dir = "dist")'
+      run: node build.js
       shell: bash
 
     - name: Deploy
